@@ -16,7 +16,10 @@ import javax.annotation.Resource;
 @RequestMapping("/consumer/payment")
 public class OrderController {
 
-    public static final String PAYMENT_URL = "http://localhost:8001";
+    // 集群条件下服务提供商并不是某一个单一的机器，这里不能写死，而应该些在注册中心注册的服务名称
+    //public static final String PAYMENT_URL = "http://localhost:8001";
+
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
     @Resource
     private RestTemplate restTemplate;
 
